@@ -1,4 +1,4 @@
-# Smart Social Customer Care
+# Smart Social Customer Care w/ Amazon Machine Learning
 
 A smart Twitter monitoring service built on Amazon Machine Learning (with Amazon Mechanical Turk), Amazon Kinesis, AWS Lambda, and Amazon SNS (Simple Notification Service).
 
