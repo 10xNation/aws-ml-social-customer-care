@@ -1,0 +1,37 @@
+{{
+    "Statement": [
+        {{
+            "Action": [
+                "logs:*"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:logs:{region}:{awsAccountId}:log-group:/aws/lambda/{lambdaFunctionName}:*"
+        }},
+        {{
+            "Action": [
+                "sns:publish"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:sns:{region}:{awsAccountId}:{snsTopic}"
+        }},
+        {{
+            "Action": [
+                "machinelearning:GetMLModel",
+                "machinelearning:Predict"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:machinelearning:{region}:{awsAccountId}:mlmodel/{mlModelId}"
+        }},
+        {{
+            "Action": [
+                "kinesis:ReadStream",
+                "kinesis:GetRecords",
+                "kinesis:GetShardIterator",
+                "kinesis:DescribeStream",
+                "kinesis:ListStreams"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:kinesis:{region}:{awsAccountId}:stream/{kinesisStream}"
+        }}
+    ]
+}}
